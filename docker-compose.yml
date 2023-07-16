@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    container_name: internal-learning
+    command: python -m pip list
+    ports:
+      - 5678:5678
+    volumes:
+      - .:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
