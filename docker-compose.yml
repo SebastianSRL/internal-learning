@@ -2,7 +2,7 @@ services:
   app:
     build: .
     container_name: internal-learning
-    command: python -m pip list
+    command: python src/main.py
     ports:
       - 5678:5678
     volumes:
