@@ -14,6 +14,19 @@ def rescale(data):
     return (data - np.min(data)) / (np.max(data) - np.min(data))
 
 
+def log_tf(x, base=10.0):
+    """Tensorflow implementation of element-wise log
+
+    Args:
+        x (ndarray): Input array
+        base (float, optional): Log base. Defaults to 10.
+
+    Returns:
+        Tensor: Element-wise log Tensor of x
+    """
+    return tf.math.log(x) / tf.math.log(base)
+
+
 def tofloat(x):
     """Convert data to float32
 
